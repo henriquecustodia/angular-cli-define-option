@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LoggerService } from './logger.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
-  `,
+  template: ``,
   styles: [],
 })
 export class AppComponent {
-  title = 'angular-cli-define-option';
+
+  constructor() {
+
+    if(IS_DEV_MODE) {
+      const loggerService = inject(LoggerService);
+      loggerService.log();
+    }
+
+  }
+
+  
 }

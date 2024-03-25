@@ -70,12 +70,18 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "define": {
+                "IS_DEV_MODE": "false"
+              }
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "define": {
+                "IS_DEV_MODE": "true"
+              }
             }
           },
           "defaultConfiguration": "production"
